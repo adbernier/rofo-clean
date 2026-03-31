@@ -9,6 +9,151 @@
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
   <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;600;700;800&display=swap" rel="stylesheet">
   <link rel="stylesheet" href="/styles.css">
+
+  <style>
+    .sr-only {
+      position: absolute;
+      width: 1px;
+      height: 1px;
+      padding: 0;
+      margin: -1px;
+      overflow: hidden;
+      clip: rect(0, 0, 0, 0);
+      white-space: nowrap;
+      border: 0;
+    }
+
+    .nav-search {
+      position: relative;
+      width: min(360px, 100%);
+      margin-left: 20px;
+      flex: 1 1 360px;
+      max-width: 360px;
+    }
+
+    .nav-search__input,
+    .hero-search__input {
+      width: 100%;
+      height: 46px;
+      padding: 0 14px;
+      border: 1px solid #d8e0ea;
+      border-radius: 999px;
+      background: #fff;
+      color: #0f172a;
+      font-size: 15px;
+      outline: none;
+      transition: border-color 0.2s ease, box-shadow 0.2s ease;
+      box-sizing: border-box;
+    }
+
+    .nav-search__input:focus,
+    .hero-search__input:focus {
+      border-color: #1346d8;
+      box-shadow: 0 0 0 4px rgba(19, 70, 216, 0.08);
+    }
+
+    .search-results {
+      position: absolute;
+      top: calc(100% + 8px);
+      left: 0;
+      right: 0;
+      background: #fff;
+      border: 1px solid #d8e0ea;
+      border-radius: 16px;
+      box-shadow: 0 10px 30px rgba(15, 23, 42, 0.08);
+      overflow: hidden;
+      display: none;
+      z-index: 1000;
+    }
+
+    .search-results.is-open {
+      display: block;
+    }
+
+    .search-results__item {
+      display: block;
+      width: 100%;
+      padding: 12px 14px;
+      text-decoration: none;
+      color: #0f172a;
+      background: #fff;
+      border-bottom: 1px solid #eef2f7;
+      font-size: 15px;
+    }
+
+    .search-results__item:last-child {
+      border-bottom: 0;
+    }
+
+    .search-results__item:hover,
+    .search-results__item:focus {
+      background: #f6f8fb;
+    }
+
+    .search-results__meta {
+      display: block;
+      font-size: 13px;
+      color: #556274;
+      margin-top: 2px;
+    }
+
+    .hero-search-card {
+      background: #fff;
+      border: 1px solid #d8e0ea;
+      border-radius: 24px;
+      padding: 22px;
+      box-shadow: 0 16px 40px rgba(15, 23, 42, 0.06);
+    }
+
+    .hero-search-card h3 {
+      margin: 0 0 8px;
+      font-size: 20px;
+      line-height: 1.2;
+    }
+
+    .hero-search-card p {
+      margin: 0 0 16px;
+      color: #556274;
+      line-height: 1.5;
+    }
+
+    .hero-search-wrap {
+      position: relative;
+    }
+
+    .hero-search-actions {
+      margin-top: 14px;
+      display: flex;
+      gap: 10px;
+      flex-wrap: wrap;
+    }
+
+    .hero-search-links {
+      margin-top: 16px;
+      display: flex;
+      flex-wrap: wrap;
+      gap: 8px;
+    }
+
+    .hero-search-links a {
+      display: inline-flex;
+      align-items: center;
+      text-decoration: none;
+      padding: 8px 12px;
+      border-radius: 999px;
+      background: #f6f8fb;
+      border: 1px solid #d8e0ea;
+      color: #0f172a;
+      font-size: 14px;
+      font-weight: 600;
+    }
+
+    @media (max-width: 1080px) {
+      .nav-search {
+        display: none;
+      }
+    }
+  </style>
 </head>
 <body>
 
@@ -24,6 +169,18 @@
         <a href="#markets">Markets</a>
         <a href="#contact">Contact</a>
       </nav>
+
+      <div class="nav-search" data-market-search>
+        <label class="sr-only" for="headerMarketSearch">Search markets</label>
+        <input
+          id="headerMarketSearch"
+          class="nav-search__input"
+          type="text"
+          placeholder="Search city or market"
+          autocomplete="off"
+        />
+        <div class="search-results" id="headerMarketResults"></div>
+      </div>
 
       <div class="actions">
         <a class="btn btn-secondary" href="#markets">Browse Markets</a>
@@ -54,21 +211,34 @@
         </div>
 
         <div class="hero-side">
-          <div class="search-card">
-            <div class="search-row">
-              <div class="field">
-                <label>Market</label>
-                <span>San Francisco, Austin, Denver</span>
-              </div>
-              <div class="field">
-                <label>Property Type</label>
-                <span>Office / Retail / Industrial</span>
-              </div>
-              <div class="field">
-                <label>Use Case</label>
-                <span>Lease / Search</span>
-              </div>
-              <a class="btn btn-primary" href="#contact">Start</a>
+          <div class="hero-search-card">
+            <h3>Search markets</h3>
+            <p>
+              Jump directly to a city page and explore local office, retail, and industrial options.
+            </p>
+
+            <div class="hero-search-wrap" data-market-search>
+              <label class="sr-only" for="heroMarketSearch">Search markets</label>
+              <input
+                id="heroMarketSearch"
+                class="hero-search__input"
+                type="text"
+                placeholder="Try San Francisco, Austin, Denver..."
+                autocomplete="off"
+              />
+              <div class="search-results" id="heroMarketResults"></div>
+            </div>
+
+            <div class="hero-search-actions">
+              <a class="btn btn-primary" href="#markets">Browse Markets</a>
+              <a class="btn btn-secondary" href="#contact">Get Help</a>
+            </div>
+
+            <div class="hero-search-links">
+              <a href="/commercial-real-estate/CA/San-Francisco/">San Francisco</a>
+              <a href="/commercial-real-estate/TX/Austin/">Austin</a>
+              <a href="/commercial-real-estate/CO/Denver/">Denver</a>
+              <a href="/commercial-real-estate/ME/South-Portland/">South Portland</a>
             </div>
           </div>
 
@@ -196,6 +366,107 @@
       </div>
     </div>
   </footer>
+
+  <script>
+    const rofoMarkets = [
+      { city: "San Francisco", state: "CA", label: "San Francisco, CA", path: "/commercial-real-estate/CA/San-Francisco/" },
+      { city: "Austin", state: "TX", label: "Austin, TX", path: "/commercial-real-estate/TX/Austin/" },
+      { city: "Denver", state: "CO", label: "Denver, CO", path: "/commercial-real-estate/CO/Denver/" },
+      { city: "South Portland", state: "ME", label: "South Portland, ME", path: "/commercial-real-estate/ME/South-Portland/" },
+      { city: "Portland", state: "ME", label: "Portland, ME", path: "/commercial-real-estate/ME/Portland/" },
+      { city: "Burbank", state: "CA", label: "Burbank, CA", path: "/commercial-real-estate/CA/Burbank/" },
+      { city: "Los Angeles", state: "CA", label: "Los Angeles, CA", path: "/commercial-real-estate/CA/Los-Angeles/" },
+      { city: "Chicago", state: "IL", label: "Chicago, IL", path: "/commercial-real-estate/IL/Chicago/" }
+    ];
+
+    function escapeHtml(str) {
+      return str.replace(/[&<>"']/g, function(m) {
+        return ({
+          "&": "&amp;",
+          "<": "&lt;",
+          ">": "&gt;",
+          '"': "&quot;",
+          "'": "&#039;"
+        })[m];
+      });
+    }
+
+    function renderSearchResults(resultsBox, matches) {
+      if (!matches.length) {
+        resultsBox.innerHTML = "";
+        resultsBox.classList.remove("is-open");
+        return;
+      }
+
+      resultsBox.innerHTML = matches.map(item => `
+        <a class="search-results__item" href="${item.path}">
+          ${escapeHtml(item.label)}
+          <span class="search-results__meta">Go to market page</span>
+        </a>
+      `).join("");
+
+      resultsBox.classList.add("is-open");
+    }
+
+    function bindMarketSearch(inputId, resultsId) {
+      const input = document.getElementById(inputId);
+      const resultsBox = document.getElementById(resultsId);
+
+      if (!input || !resultsBox) return;
+
+      function runSearch(query) {
+        const q = query.trim().toLowerCase();
+
+        if (!q) {
+          renderSearchResults(resultsBox, []);
+          return;
+        }
+
+        const matches = rofoMarkets
+          .filter(item =>
+            item.city.toLowerCase().includes(q) ||
+            item.state.toLowerCase().includes(q) ||
+            item.label.toLowerCase().includes(q)
+          )
+          .slice(0, 8);
+
+        renderSearchResults(resultsBox, matches);
+      }
+
+      input.addEventListener("input", function(e) {
+        runSearch(e.target.value);
+      });
+
+      input.addEventListener("focus", function(e) {
+        if (e.target.value.trim()) {
+          runSearch(e.target.value);
+        }
+      });
+
+      input.addEventListener("keydown", function(e) {
+        if (e.key === "Enter") {
+          const q = input.value.trim().toLowerCase();
+          const firstMatch = rofoMarkets.find(item =>
+            item.city.toLowerCase().includes(q) ||
+            item.label.toLowerCase().includes(q)
+          );
+
+          if (firstMatch) {
+            window.location.href = firstMatch.path;
+          }
+        }
+      });
+
+      document.addEventListener("click", function(e) {
+        if (!e.target.closest("[data-market-search]")) {
+          resultsBox.classList.remove("is-open");
+        }
+      });
+    }
+
+    bindMarketSearch("headerMarketSearch", "headerMarketResults");
+    bindMarketSearch("heroMarketSearch", "heroMarketResults");
+  </script>
 
 </body>
 </html>
