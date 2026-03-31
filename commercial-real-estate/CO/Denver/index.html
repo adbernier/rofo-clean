@@ -1,23 +1,243 @@
 <!DOCTYPE html>
-<html>
+<html lang="en">
 <head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
   <title>Commercial Real Estate in Denver, CO | Rofo</title>
+  <meta name="description" content="Explore office, retail, and industrial real estate in Denver, CO.">
+  <style>
+    :root {
+      --bg: #f6f4ef;
+      --surface: #ffffff;
+      --text: #1f2937;
+      --muted: #6b7280;
+      --border: #e5e7eb;
+      --brand: #1f4b7f;
+      --brand-dark: #173a61;
+      --radius: 14px;
+      --max: 1080px;
+    }
+
+    * { box-sizing: border-box; }
+
+    body {
+      margin: 0;
+      font-family: Arial, sans-serif;
+      background: var(--bg);
+      color: var(--text);
+      line-height: 1.5;
+    }
+
+    a {
+      color: var(--brand);
+      text-decoration: none;
+    }
+
+    a:hover {
+      text-decoration: underline;
+    }
+
+    .topbar {
+      background: var(--surface);
+      border-bottom: 1px solid var(--border);
+    }
+
+    .topbar-inner,
+    .container {
+      max-width: var(--max);
+      margin: 0 auto;
+      padding-left: 20px;
+      padding-right: 20px;
+    }
+
+    .topbar-inner {
+      min-height: 72px;
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      gap: 20px;
+    }
+
+    .brand {
+      font-size: 24px;
+      font-weight: 700;
+      color: var(--brand);
+    }
+
+    .nav {
+      display: flex;
+      gap: 18px;
+      flex-wrap: wrap;
+    }
+
+    .nav a {
+      color: var(--text);
+      font-size: 14px;
+    }
+
+    .container {
+      padding-top: 32px;
+      padding-bottom: 56px;
+    }
+
+    .breadcrumb {
+      font-size: 13px;
+      color: var(--muted);
+      margin-bottom: 18px;
+    }
+
+    .hero,
+    .card {
+      background: var(--surface);
+      border: 1px solid var(--border);
+      border-radius: var(--radius);
+    }
+
+    .hero {
+      padding: 32px;
+      margin-bottom: 24px;
+    }
+
+    .card {
+      padding: 24px;
+    }
+
+    h1 {
+      margin: 0 0 12px;
+      font-size: 38px;
+      line-height: 1.1;
+    }
+
+    h2 {
+      margin-top: 0;
+      margin-bottom: 14px;
+      font-size: 24px;
+    }
+
+    .lead {
+      font-size: 18px;
+      color: var(--muted);
+      max-width: 760px;
+      margin: 0;
+    }
+
+    .grid {
+      display: grid;
+      grid-template-columns: 1.2fr 0.8fr;
+      gap: 24px;
+      margin-top: 24px;
+    }
+
+    .building-list {
+      list-style: none;
+      padding: 0;
+      margin: 0;
+    }
+
+    .building-list li {
+      padding: 12px 0;
+      border-bottom: 1px solid var(--border);
+    }
+
+    .building-list li:last-child {
+      border-bottom: 0;
+    }
+
+    .muted {
+      color: var(--muted);
+    }
+
+    form input,
+    form textarea {
+      width: 100%;
+      padding: 12px;
+      border: 1px solid #d7dbe2;
+      border-radius: 10px;
+      font-size: 14px;
+      margin-bottom: 12px;
+      font-family: Arial, sans-serif;
+    }
+
+    form textarea {
+      min-height: 120px;
+      resize: vertical;
+    }
+
+    form button {
+      background: var(--brand);
+      color: #fff;
+      border: 0;
+      padding: 12px 18px;
+      border-radius: 10px;
+      font-size: 14px;
+      font-weight: 700;
+      cursor: pointer;
+    }
+
+    .footer {
+      margin-top: 36px;
+      color: var(--muted);
+      font-size: 13px;
+      text-align: center;
+    }
+
+    @media (max-width: 820px) {
+      h1 { font-size: 30px; }
+      .grid { grid-template-columns: 1fr; }
+      .hero { padding: 24px; }
+      .topbar-inner {
+        align-items: flex-start;
+        padding-top: 16px;
+        padding-bottom: 16px;
+      }
+    }
+  </style>
 </head>
-<body style="font-family: Arial; padding: 40px; max-width: 800px;">
+<body>
+  <header class="topbar">
+    <div class="topbar-inner">
+      <a class="brand" href="/">Rofo</a>
+      <nav class="nav">
+        <a href="/">Home</a>
+        <a href="/commercial-real-estate/CO/Denver/">Markets</a>
+      </nav>
+    </div>
+  </header>
 
-<p><a href="/">← Rofo Home</a></p>
+  <main class="container">
+    <div class="breadcrumb">
+      <a href="/">Home</a> / Denver
+    </div>
 
-<h1>Commercial Real Estate in Denver, CO</h1>
+    <section class="hero">
+      <h1>Commercial Real Estate in Denver, CO</h1>
+      <p class="lead">
+        Explore office, retail, and industrial space in Denver. Rofo helps businesses identify options across major U.S. markets.
+      </p>
+    </section>
 
-<p>Rofo helps businesses find office, retail, and industrial space in Denver.</p>
+    <section class="grid">
+      <div class="card">
+        <h2>Featured Buildings</h2>
+        <ul class="building-list">
+          <li>No featured buildings yet.</li>
+        </ul>
+      </div>
 
-<h3>Looking for space in Denver?</h3>
+      <div class="card">
+        <h2>Need help in Denver?</h2>
+        <p class="muted">Tell us what kind of space you’re looking for.</p>
+        <form action="https://formspree.io/f/YOURID" method="POST">
+          <input name="email" type="email" placeholder="Your email">
+          <textarea name="message" placeholder="What kind of space are you looking for?"></textarea>
+          <button type="submit">Submit</button>
+        </form>
+      </div>
+    </section>
 
-<form action="https://formspree.io/f/YOURID" method="POST">
-  <input name="email" placeholder="Your email"><br><br>
-  <textarea name="message" placeholder="What are you looking for?"></textarea><br><br>
-  <button type="submit">Submit</button>
-</form>
-
+    <div class="footer">
+      Helping businesses find commercial space since 2007.
+    </div>
+  </main>
 </body>
 </html>
