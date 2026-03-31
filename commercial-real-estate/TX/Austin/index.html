@@ -3,8 +3,8 @@
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1">
-  <title>345 California Street, San Francisco, CA | Rofo</title>
-  <meta name="description" content="Learn more about 345 California Street in San Francisco, CA. Contact Rofo for help finding office, retail, or industrial space.">
+  <title>Commercial Real Estate in Austin, TX | Rofo</title>
+  <meta name="description" content="Explore office, retail, and industrial real estate in Austin, TX.">
   <style>
     :root {
       --bg: #f6f4ef;
@@ -103,7 +103,7 @@
     }
 
     h1 {
-      margin: 0 0 10px;
+      margin: 0 0 12px;
       font-size: 38px;
       line-height: 1.1;
     }
@@ -114,30 +114,11 @@
       font-size: 24px;
     }
 
-    .subhead {
+    .lead {
+      font-size: 18px;
       color: var(--muted);
-      font-size: 17px;
-      margin-bottom: 18px;
-    }
-
-    .facts {
-      display: grid;
-      grid-template-columns: repeat(2, minmax(0, 1fr));
-      gap: 16px 22px;
-      margin-top: 18px;
-    }
-
-    .fact-label {
-      font-size: 12px;
-      text-transform: uppercase;
-      letter-spacing: 0.04em;
-      color: var(--muted);
-      margin-bottom: 4px;
-    }
-
-    .fact-value {
-      font-size: 16px;
-      font-weight: 700;
+      max-width: 760px;
+      margin: 0;
     }
 
     .grid {
@@ -145,6 +126,21 @@
       grid-template-columns: 1.2fr 0.8fr;
       gap: 24px;
       margin-top: 24px;
+    }
+
+    .building-list {
+      list-style: none;
+      padding: 0;
+      margin: 0;
+    }
+
+    .building-list li {
+      padding: 12px 0;
+      border-bottom: 1px solid var(--border);
+    }
+
+    .building-list li:last-child {
+      border-bottom: 0;
     }
 
     .muted {
@@ -178,11 +174,6 @@
       cursor: pointer;
     }
 
-    .related-links a {
-      display: block;
-      margin-bottom: 10px;
-    }
-
     .footer {
       margin-top: 36px;
       color: var(--muted);
@@ -193,7 +184,6 @@
     @media (max-width: 820px) {
       h1 { font-size: 30px; }
       .grid { grid-template-columns: 1fr; }
-      .facts { grid-template-columns: 1fr; }
       .hero { padding: 24px; }
       .topbar-inner {
         align-items: flex-start;
@@ -209,73 +199,39 @@
       <a class="brand" href="/">Rofo</a>
       <nav class="nav">
         <a href="/">Home</a>
-        <a href="/commercial-real-estate/CA/San-Francisco/">San Francisco</a>
+        <a href="/commercial-real-estate/TX/Austin/">Markets</a>
       </nav>
     </div>
   </header>
 
   <main class="container">
     <div class="breadcrumb">
-      <a href="/">Home</a> /
-      <a href="/commercial-real-estate/CA/San-Francisco/">San Francisco</a> /
-      345 California Street
+      <a href="/">Home</a> / Austin
     </div>
 
     <section class="hero">
-      <h1>345 California Street</h1>
-      <div class="subhead">San Francisco, CA 94104</div>
-
-      <div class="facts">
-        <div>
-          <div class="fact-label">Property Type</div>
-          <div class="fact-value">Office</div>
-        </div>
-        <div>
-          <div class="fact-label">Building Size</div>
-          <div class="fact-value">—</div>
-        </div>
-        <div>
-          <div class="fact-label">Class</div>
-          <div class="fact-value">—</div>
-        </div>
-        <div>
-          <div class="fact-label">Year Built</div>
-          <div class="fact-value">—</div>
-        </div>
-      </div>
+      <h1>Commercial Real Estate in Austin, TX</h1>
+      <p class="lead">
+        Explore office, retail, and industrial space in Austin. Rofo helps businesses identify options across major U.S. markets.
+      </p>
     </section>
 
     <section class="grid">
-      <div>
-        <div class="card">
-          <h2>About This Building</h2>
-          <p>
-            345 California Street is a commercial property in San Francisco, CA.
-            Rofo helps businesses explore office, retail, and industrial space across major U.S. markets.
-          </p>
-          <p class="muted">
-            If you are considering this building or nearby options, submit your requirements and we’ll help you identify potential matches.
-          </p>
-        </div>
-
-        <div class="card">
-          <h2>Explore the Market</h2>
-          <div class="related-links">
-            <a href="/commercial-real-estate/CA/San-Francisco/">Commercial Real Estate in San Francisco</a>
-            <a href="/">Browse More Markets</a>
-          </div>
-        </div>
+      <div class="card">
+        <h2>Featured Buildings</h2>
+        <ul class="building-list">
+          <li>No featured buildings yet.</li>
+        </ul>
       </div>
 
-      <div>
-        <div class="card">
-          <h2>Need help finding space?</h2>
-          <form action="https://formspree.io/f/YOURID" method="POST">
-            <input name="email" type="email" placeholder="Your email">
-            <textarea name="message" placeholder="What kind of space are you looking for?"></textarea>
-            <button type="submit">Submit</button>
-          </form>
-        </div>
+      <div class="card">
+        <h2>Need help in Austin?</h2>
+        <p class="muted">Tell us what kind of space you’re looking for.</p>
+        <form action="https://formspree.io/f/YOURID" method="POST">
+          <input name="email" type="email" placeholder="Your email">
+          <textarea name="message" placeholder="What kind of space are you looking for?"></textarea>
+          <button type="submit">Submit</button>
+        </form>
       </div>
     </section>
 
