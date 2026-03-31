@@ -1,247 +1,148 @@
 <!DOCTYPE html>
-<html lang="en">
+<html>
 <head>
-  <meta charset="UTF-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1">
   <title>Commercial Real Estate in San Francisco, CA | Rofo</title>
-  <meta name="description" content="Explore office, retail, and industrial real estate in San Francisco, CA.">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <meta charset="UTF-8">
+
   <style>
-    :root {
-      --bg: #f6f4ef;
-      --surface: #ffffff;
-      --text: #1f2937;
-      --muted: #6b7280;
-      --border: #e5e7eb;
-      --brand: #1f4b7f;
-      --brand-dark: #173a61;
-      --radius: 14px;
-      --max: 1080px;
-    }
-
-    * { box-sizing: border-box; }
-
     body {
-      margin: 0;
       font-family: Arial, sans-serif;
-      background: var(--bg);
-      color: var(--text);
-      line-height: 1.5;
-    }
-
-    a {
-      color: var(--brand);
-      text-decoration: none;
-    }
-
-    a:hover {
-      text-decoration: underline;
+      margin: 0;
+      background: #f7f7f5;
+      color: #222;
     }
 
     .topbar {
-      background: var(--surface);
-      border-bottom: 1px solid var(--border);
-    }
-
-    .topbar-inner,
-    .container {
-      max-width: var(--max);
-      margin: 0 auto;
-      padding-left: 20px;
-      padding-right: 20px;
+      background: white;
+      border-bottom: 1px solid #e5e5e0;
     }
 
     .topbar-inner {
-      min-height: 72px;
+      max-width: 980px;
+      margin: 0 auto;
+      padding: 18px 20px;
       display: flex;
-      align-items: center;
       justify-content: space-between;
-      gap: 20px;
+      align-items: center;
     }
 
     .brand {
-      font-size: 24px;
+      font-size: 22px;
       font-weight: 700;
-      color: var(--brand);
-    }
-
-    .nav {
-      display: flex;
-      gap: 18px;
-      flex-wrap: wrap;
-    }
-
-    .nav a {
-      color: var(--text);
-      font-size: 14px;
+      color: #1d3557;
+      text-decoration: none;
     }
 
     .container {
-      padding-top: 32px;
-      padding-bottom: 56px;
+      max-width: 980px;
+      margin: 0 auto;
+      padding: 40px 20px;
     }
 
     .breadcrumb {
       font-size: 13px;
-      color: var(--muted);
       margin-bottom: 18px;
-    }
-
-    .hero,
-    .card {
-      background: var(--surface);
-      border: 1px solid var(--border);
-      border-radius: var(--radius);
+      color: #666;
     }
 
     .hero {
-      padding: 32px;
+      background: white;
+      border: 1px solid #e5e5e0;
+      border-radius: 12px;
+      padding: 28px;
       margin-bottom: 24px;
     }
 
-    .card {
-      padding: 24px;
-    }
-
     h1 {
-      margin: 0 0 12px;
-      font-size: 38px;
-      line-height: 1.1;
-    }
-
-    h2 {
-      margin-top: 0;
-      margin-bottom: 14px;
-      font-size: 24px;
-    }
-
-    .lead {
-      font-size: 18px;
-      color: var(--muted);
-      max-width: 760px;
-      margin: 0;
+      margin: 0 0 10px;
+      font-size: 32px;
     }
 
     .grid {
       display: grid;
-      grid-template-columns: 1.2fr 0.8fr;
+      grid-template-columns: 2fr 1fr;
       gap: 24px;
-      margin-top: 24px;
     }
 
-    .building-list {
-      list-style: none;
-      padding: 0;
-      margin: 0;
-    }
-
-    .building-list li {
-      padding: 12px 0;
-      border-bottom: 1px solid var(--border);
-    }
-
-    .building-list li:last-child {
-      border-bottom: 0;
-    }
-
-    .muted {
-      color: var(--muted);
+    .card {
+      background: white;
+      border: 1px solid #e5e5e0;
+      border-radius: 12px;
+      padding: 24px;
+      margin-bottom: 24px;
     }
 
     form input,
     form textarea {
       width: 100%;
       padding: 12px;
-      border: 1px solid #d7dbe2;
-      border-radius: 10px;
-      font-size: 14px;
       margin-bottom: 12px;
-      font-family: Arial, sans-serif;
-    }
-
-    form textarea {
-      min-height: 120px;
-      resize: vertical;
+      border: 1px solid #ddd;
+      border-radius: 8px;
     }
 
     form button {
-      background: var(--brand);
-      color: #fff;
-      border: 0;
-      padding: 12px 18px;
-      border-radius: 10px;
-      font-size: 14px;
-      font-weight: 700;
-      cursor: pointer;
-    }
-
-    .footer {
-      margin-top: 36px;
-      color: var(--muted);
-      font-size: 13px;
-      text-align: center;
+      background: #1d3557;
+      color: white;
+      padding: 12px;
+      border: none;
+      border-radius: 8px;
     }
 
     @media (max-width: 820px) {
-      h1 { font-size: 30px; }
-      .grid { grid-template-columns: 1fr; }
-      .hero { padding: 24px; }
-      .topbar-inner {
-        align-items: flex-start;
-        padding-top: 16px;
-        padding-bottom: 16px;
+      .grid {
+        grid-template-columns: 1fr;
       }
     }
   </style>
 </head>
+
 <body>
-  <header class="topbar">
-    <div class="topbar-inner">
-      <a class="brand" href="/">Rofo</a>
-      <nav class="nav">
-        <a href="/">Home</a>
-        <a href="/commercial-real-estate/CA/San-Francisco/">Markets</a>
-      </nav>
-    </div>
-  </header>
 
-  <main class="container">
-    <div class="breadcrumb">
-      <a href="/">Home</a> / San Francisco
-    </div>
+<div class="topbar">
+  <div class="topbar-inner">
+    <a class="brand" href="/">Rofo</a>
+  </div>
+</div>
 
-    <section class="hero">
-      <h1>Commercial Real Estate in San Francisco, CA</h1>
-      <p class="lead">
-        Explore office, retail, and industrial space in San Francisco. Rofo helps businesses identify options across major U.S. markets.
-      </p>
-    </section>
+<div class="container">
 
-    <section class="grid">
+  <div class="breadcrumb">
+    <a href="/">Home</a> / San Francisco
+  </div>
+
+  <div class="hero">
+    <h1>Commercial Real Estate in San Francisco, CA</h1>
+  </div>
+
+  <div class="grid">
+
+    <div>
       <div class="card">
         <h2>Featured Buildings</h2>
-        <ul class="building-list">
-          <li>
-            <a href="/commercial-real-estate/building/CA/San-Francisco/345-California-Street/">
-              345 California Street
-            </a>
-          </li>
-        </ul>
+        <p>
+          <a href="/commercial-real-estate/building/CA/San-Francisco/345-California-Street/">
+            345 California Street
+          </a>
+        </p>
       </div>
+    </div>
 
+    <div>
       <div class="card">
-        <h2>Need help in San Francisco?</h2>
-        <p class="muted">Tell us what kind of space you’re looking for.</p>
-        <form action="https://formspree.io/f/YOURID" method="POST">
-          <input name="email" type="email" placeholder="Your email">
-          <textarea name="message" placeholder="What kind of space are you looking for?"></textarea>
-          <button type="submit">Submit</button>
+        <h2>Need help finding space?</h2>
+        <form>
+          <input placeholder="Your email">
+          <textarea placeholder="What are you looking for?"></textarea>
+          <button>Submit</button>
         </form>
       </div>
-    </section>
-
-    <div class="footer">
-      Helping businesses find commercial space since 2007.
     </div>
-  </main>
+
+  </div>
+
+</div>
+
 </body>
 </html>
